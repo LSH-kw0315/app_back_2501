@@ -13,7 +13,7 @@ public class ChatMessageService {
     private final ChatMessageRepository chatMessageRepository;
     private final ChatRoomRepository chatRoomRepository;
 
-    public ChatMessage write(Long roomId, String writerName, String content) {
+    public ChatMessage write(Long roomId, String writerName, String content, String client) {
         ChatRoom chatRoom=chatRoomRepository.findById(roomId).orElse(null);
         if(chatRoom==null){
             return null;
@@ -23,6 +23,7 @@ public class ChatMessageService {
                 .chatRoom(chatRoom)
                 .author(writerName)
                 .content(content)
+                .client(client)
                 .build();
 
         chatMessageRepository.save(message);

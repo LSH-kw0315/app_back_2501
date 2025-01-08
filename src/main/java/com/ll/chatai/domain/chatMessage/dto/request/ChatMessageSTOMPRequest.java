@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ChatMessageSTOMPRequest {
-    private Long id;
     private String author;
     private String content;
+    private String client;
 }

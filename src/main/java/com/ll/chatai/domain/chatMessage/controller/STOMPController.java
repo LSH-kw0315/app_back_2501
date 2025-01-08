@@ -26,8 +26,10 @@ public class STOMPController {
                                   @RequestBody ChatMessageSTOMPRequest request
     ){ //추후 RequestBody로 메시지를 받음
         System.out.println("메시지 매핑");
-        ChatMessage chatMessage=chatMessageService.write(roomId,request.getAuthor(),request.getContent());
+        ChatMessage chatMessage=chatMessageService.write(roomId,request.getAuthor(),request.getContent(),request.getClient());
         String link="/app/chat/"+roomId;
+
+
         messagingTemplate.convertAndSend(link,chatMessage);
     }
 }

@@ -27,7 +27,7 @@ public class InitData {
             IntStream.rangeClosed(1,100)
                     .forEach( i-> {
                                 Long roomId = rooms[random.nextInt(3)].getId();
-                                chatMessageService.write(roomId,"유저"+i,"내용"+i);
+                                chatMessageService.write(roomId,"유저"+i,"내용"+i, "any");
                             }
                     );
         };

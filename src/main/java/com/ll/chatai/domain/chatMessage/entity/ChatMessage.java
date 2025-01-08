@@ -27,4 +27,6 @@ public class ChatMessage extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     private ChatRoom chatRoom;
+
+    private String client;
 }

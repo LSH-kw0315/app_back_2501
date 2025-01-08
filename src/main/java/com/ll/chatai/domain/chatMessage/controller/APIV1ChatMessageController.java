@@ -1,6 +1,5 @@
 package com.ll.chatai.domain.chatMessage.controller;
 
-import com.ll.chatai.domain.chatMessage.dto.request.ChatMessageRequest;
 import com.ll.chatai.domain.chatMessage.entity.ChatMessage;
 import com.ll.chatai.domain.chatMessage.service.ChatMessageService;
 import com.ll.chatai.domain.chatRoom.entity.ChatRoom;
@@ -48,14 +47,14 @@ public class APIV1ChatMessageController {
         return result;
     }
 
-    @PostMapping("/{chatRoomId}/messages")
-    public ChatMessage writeMessageHTTP(@PathVariable("chatRoomId") Long roomId,
-                                                    @RequestBody ChatMessageRequest request
-                               ){ //추후 RequestBody로 메시지를 받음
-        System.out.println("여기로 포스트 매핑이 들어옴");
-        ChatMessage chatMessage=chatMessageService.write(roomId,request.getAuthor(),request.getContent());
-        return chatMessage;
-    }
+//    @PostMapping("/{chatRoomId}/messages")
+//    public ChatMessage writeMessageHTTP(@PathVariable("chatRoomId") Long roomId,
+//                                                    @RequestBody ChatMessageRequest request
+//                               ){ //추후 RequestBody로 메시지를 받음
+//        System.out.println("여기로 포스트 매핑이 들어옴");
+//        ChatMessage chatMessage=chatMessageService.write(roomId,request.getAuthor(),request.getContent(), request.getClient());
+//        return chatMessage;
+//    }
 
 
 
